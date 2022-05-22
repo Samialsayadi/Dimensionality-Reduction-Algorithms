@@ -22,6 +22,9 @@ train with new features: (1200, 2000)
 test with old features:  (300, 45987)
 test with new features: (300, 2000)
 ```
+# 2. Linear Discriminant Analysis (LDA)
+# 3. Principal Component Analysis
+# 4. Non-negative Matrix Factorization (NMF)
 # SVD in NLP (Worked Example) 
 
 ```python
