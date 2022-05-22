@@ -28,8 +28,8 @@ Doc = np.array([[1, 1,1,0,0], [2, 2,2,0,0],[1, 1,1,0,0],[0, 0,0,2,2],[0, 0,0,3,3
 Doc
 ```
 
-
-# So to find the eigenvalues of the above entity we compute matrices Doc*Doc.T Doc* Doc.^T and Doc.^T* Doc. As previously stated , the eigenvectors of Doc* Doc.^T make up the columns of U so we can do the following analysis to find U.
+# compute matrices
+So to find the eigenvalues of the above entity we compute matrices Doc*Doc.T Doc* Doc.^T and Doc.^T* Doc. As previously stated , the eigenvectors of Doc* Doc.^T make up the columns of U so we can do the following analysis to find U.
 ```python
 Doc_U=Doc.dot(Doc.T)
 Doc_U
