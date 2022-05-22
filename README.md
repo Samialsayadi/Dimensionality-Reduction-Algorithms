@@ -71,6 +71,7 @@ print("test with old features: ",np.array(X_test).shape)
 print("test with new features:" ,np.array(X_test_new).shape)
 ```
 # 4. Non-negative Matrix Factorization (NMF)
+Non-negative matrix factorization (NMF or NNMF), also non-negative matrix approximation is a group of algorithms in multivariate analysis and linear algebra where a matrix V is factorized into (usually) two matrices W and H, with the property that all three matrices have no negative elements. This non-negativity makes the resulting matrices easier to inspect. Also, in applications such as processing of audio spectrograms or muscular activity, non-negativity is inherent to the data being considered. Since the problem is not exactly solvable in general, it is commonly approximated numerically.
 ```python
 from sklearn.decomposition import NMF
 NMF_ = NMF(n_components=2000)
