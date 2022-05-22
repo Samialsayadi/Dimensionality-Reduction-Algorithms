@@ -1,6 +1,24 @@
 
 # Dimensionality-Reduction-Algorithms
 Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable (hard to control or deal with). Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as NLP: signal processing, Text classification, speech recognition, neuroinformatics, and bioinformatics.
+
+```python
+rom sklearn.feature_extraction.text import TfidfVectorizer
+import numpy as np
+import pandas as pd
+def TFIDF(X_train, X_test, MAX_NB_WORDS=75000):
+    vectorizer_x = TfidfVectorizer(max_features=MAX_NB_WORDS)
+    X_train = vectorizer_x.fit_transform(X_train).toarray()
+    X_test = vectorizer_x.transform(X_test).toarray()
+    print("tf-idf with", str(np.array(X_train).shape[1]), "features")
+    return (X_train, X_test)
+    
+Corpus = pd.read_csv(r"aji-Arabic_corpus.csv")
+X_train, X_test, y_train, y_test = model_selection.train_test_split(Corpus['text'],Corpus['targe'],test_size=0.2)
+X_train, X_test=TFIDF(X_train,X_test)
+
+```
+
 # 1. Random Projection:
 random feature is a dimensionality reduction technique mostly used for very large volume dataset or very high dimensional feature space.
 ```python
@@ -24,11 +42,30 @@ test with new features: (300, 2000)
 ```
 # 2. Linear Discriminant Analysis (LDA)
 ```python
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+LDA = LinearDiscriminantAnalysis()
+X_train_new = LDA.fit(X_train,y_train)
+X_train_new =  LDA.transform(X_train)
+X_test_new = LDA.transform(X_test)
 
+print("train with old features: ",np.array(X_train).shape)
+print("train with new features:" ,np.array(X_train_new).shape)
+
+print("test with old features: ",np.array(X_test).shape)
+print("test with new features:" ,np.array(X_test_new).shape)
 ```
 # 3. Principal Component Analysis
 ```python
+from sklearn.decomposition import PCA
+pca = PCA(n_components=1200)
+X_train_new = pca.fit_transform(X_train)
+X_test_new = pca.transform(X_test)
 
+print("train with old features: ",np.array(X_train).shape)
+print("train with new features:" ,np.array(X_train_new).shape)
+
+print("test with old features: ",np.array(X_test).shape)
+print("test with new features:" ,np.array(X_test_new).shape)
 ```
 # 4. Non-negative Matrix Factorization (NMF)
 ```python
