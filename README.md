@@ -23,10 +23,40 @@ test with old features:  (300, 45987)
 test with new features: (300, 2000)
 ```
 # 2. Linear Discriminant Analysis (LDA)
-# 3. Principal Component Analysis
-# 4. Non-negative Matrix Factorization (NMF)
-# 5. Singular Value Decomposition
+```python
 
+```
+# 3. Principal Component Analysis
+```python
+
+```
+# 4. Non-negative Matrix Factorization (NMF)
+```python
+from sklearn.decomposition import NMF
+NMF_ = NMF(n_components=2000)
+X_train_new = NMF_.fit(X_train)
+X_train_new =  NMF_.transform(X_train)
+X_test_new = NMF_.transform(X_test)
+
+print("train with old features: ",np.array(X_train).shape)
+print("train with new features:" ,np.array(X_train_new).shape)
+
+print("test with old features: ",np.array(X_test).shape)
+print("test with new features:" ,np.array(X_test_new))
+```
+# 5. Singular Value Decomposition
+```python
+from sklearn.decomposition import TruncatedSVD
+svd = TruncatedSVD(n_components=1200)
+X_train_new = svd.fit(X_train)
+X_train_new =  svd.transform(X_train)
+X_test_new = svd.transform(X_test)
+print("train with old features: ",np.array(X_train).shape)
+print("train with new features:" ,np.array(X_train_new).shape)
+
+print("test with old features: ",np.array(X_test).shape)
+print("test with new features:" ,np.array(X_test_new))
+```
 # SVD in NLP (Worked Example) 
 
 ```python
