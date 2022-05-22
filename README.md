@@ -1,7 +1,27 @@
 
 # Dimensionality-Reduction-Algorithms
 Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable (hard to control or deal with). Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as NLP: signal processing, Text classification, speech recognition, neuroinformatics, and bioinformatics.
+# 1. Random Projection:
+random feature is a dimensionality reduction technique mostly used for very large volume dataset or very high dimensional feature space.
+```python
+from sklearn import random_projection
 
+RandomProjection = random_projection.GaussianRandomProjection(n_components=2000)
+X_train_new = RandomProjection.fit_transform(X_train)
+X_test_new = RandomProjection.transform(X_test)
+
+print("train with old features: ",np.array(X_train).shape)
+print("train with new features:" ,np.array(X_train_new).shape)
+
+print("test with old features: ",np.array(X_test).shape)
+print("test with new features:" ,np.array(X_test_new).shape)
+```
+```
+train with old features:  (1200, 45987)
+train with new features: (1200, 2000)
+test with old features:  (300, 45987)
+test with new features: (300, 2000)
+```
 # SVD in NLP (Worked Example) 
 
 ```python
