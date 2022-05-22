@@ -25,6 +25,8 @@ test with new features: (300, 2000)
 # 2. Linear Discriminant Analysis (LDA)
 # 3. Principal Component Analysis
 # 4. Non-negative Matrix Factorization (NMF)
+# 5. Singular Value Decomposition
+
 # SVD in NLP (Worked Example) 
 
 ```python
