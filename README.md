@@ -41,6 +41,7 @@ test with old features:  (300, 45987)
 test with new features: (300, 2000)
 ```
 # 2. Linear Discriminant Analysis (LDA)
+Linear Discriminant Analysis (LDA) is another commonly used technique for data classification and dimensionality reduction. LDA is particularly helpful where the within-class frequencies are unequal and their performances have been evaluated on randomly generated test data. Class-dependent and class-independent transformation are two approaches in LDA where the ratio of between-class-variance to within-class-variance and the ratio of the overall-variance to within-class-variance are used respectively.
 ```python
 from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
 LDA = LinearDiscriminantAnalysis()
@@ -55,6 +56,8 @@ print("test with old features: ",np.array(X_test).shape)
 print("test with new features:" ,np.array(X_test_new).shape)
 ```
 # 3. Principal Component Analysis
+
+Principle component analysis~(PCA) is the most popular technique in multivariate analysis and dimensionality reduction. PCA is a method to identify a subspace in which the data approximately lies. This means finding new variables that are uncorrelated and maximizing the variance to preserve as much variability as possible.
 ```python
 from sklearn.decomposition import PCA
 pca = PCA(n_components=1200)
@@ -82,6 +85,11 @@ print("test with old features: ",np.array(X_test).shape)
 print("test with new features:" ,np.array(X_test_new))
 ```
 # 5. Singular Value Decomposition
+In linear algebra, the singular value decomposition (SVD) is a factorization of a real or complex matrix. It generalizes the eigendecomposition of a square normal matrix with an orthonormal eigenbasis to any 
+m
+×
+n
+m\times n matrix. It is related to the polar decomposition.
 ```python
 from sklearn.decomposition import TruncatedSVD
 svd = TruncatedSVD(n_components=1200)
