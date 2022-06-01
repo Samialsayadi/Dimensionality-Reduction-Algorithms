@@ -183,7 +183,12 @@ print(U)
 print(s)
 print(VT)
 ```
+# Dependencies
 
+* [NLTK:](https://anaconda.org/anaconda/nltk) `conda install nltk` 
+* [Pandas:](https://pypi.org/project/pandas/) `pip install pandas `.
+* [Numpy:](https://anaconda.org/anaconda/numpy) `conda install -c anaconda numpy `.
+* [Scikit-cmeans:](https://pypi.org/project/scikit-cmeans) `pip install scikit-cmeans`.
 
 
 
